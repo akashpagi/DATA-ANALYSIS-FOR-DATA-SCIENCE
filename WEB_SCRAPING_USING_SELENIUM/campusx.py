@@ -20,6 +20,9 @@ from selenium.webdriver.chrome.service import Service
 s = Service()
 o = webdriver.EdgeOptions()
 
+# to protect form closing the window automatically
+o.add_experimental_option('detach', True)
+
 # # Create a WebDriver instance with ChromeDriverManager
 driver = webdriver.Edge(options=o,)
 driver.get('https://www.google.com/')
@@ -42,3 +45,6 @@ time.sleep(1)
 
 join_program = driver.find_element(by=By.XPATH, value='//*[@id="1668425005116"]/span[2]/a')
 join_program.click()
+
+# to closed the browser automatically
+# driver.quit()
